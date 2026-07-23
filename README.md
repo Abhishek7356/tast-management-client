@@ -1,7 +1,6 @@
 # Task Manager Frontend
 
-## Project Setup
-
+## Install dependencies:
 
 npm install
 

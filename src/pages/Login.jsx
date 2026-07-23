@@ -39,7 +39,7 @@ const Login = () => {
             setLoading(true);
 
             const { data } = await login(formData);
-
+            
             localStorage.setItem("token", data.user.token);
             localStorage.setItem("user", JSON.stringify(data.user));
 
