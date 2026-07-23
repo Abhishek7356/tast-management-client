@@ -15,7 +15,6 @@ const Register = () => {
         name: "",
         email: "",
         password: "",
-        role: "user",
     });
 
     const [loading, setLoading] = useState(false);
@@ -69,6 +68,7 @@ const Register = () => {
                                     className="form-control mb-3"
                                     placeholder="Name"
                                     name="name"
+                                    required
                                     value={formData.name}
                                     onChange={handleChange}
                                 />
@@ -77,6 +77,7 @@ const Register = () => {
                                     placeholder="Email"
                                     type="email"
                                     name="email"
+                                    required
                                     value={formData.email}
                                     onChange={handleChange}
                                 />
@@ -85,18 +86,10 @@ const Register = () => {
                                     placeholder="Password"
                                     type="password"
                                     name="password"
+                                    required
                                     value={formData.password}
                                     onChange={handleChange}
                                 />
-                                <select
-                                    className="form-select mb-3"
-                                    name="role"
-                                    value={formData.role}
-                                    onChange={handleChange}
-                                >
-                                    <option value="user">User</option>
-                                    <option value="admin">Admin</option>
-                                </select>
                                 <button
                                     className="btn btn-success w-100"
                                     disabled={loading}
@@ -105,7 +98,7 @@ const Register = () => {
                                 </button>
                             </form>
                             <p className="text-center mt-3">
-                                Already have an account?{" "}
+                                Already have an account?
                                 <Link to="/">Login</Link>
                             </p>
                         </div>
