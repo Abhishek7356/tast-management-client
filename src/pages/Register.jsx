@@ -50,11 +50,18 @@ const Register = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row justify-content-center">
+        <div className="container mt-5 pt-5">
+            <div className="row justify-content-center align-items-center">
+                <div className="col-md-6 d-none d-md-block">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/011/432/528/small/enter-login-and-password-registration-page-on-screen-sign-in-to-your-account-creative-metaphor-login-page-mobile-app-with-user-page-flat-illustration-vector.jpg"
+                        alt="Task Manager"
+                        className="img-fluid rounded"
+                    />
+                </div>
                 <div className="col-md-5">
-                    <div className="card shadow">
-                        <div className="card-body">
+                    <div className="card">
+                        <div className="card-body p-4">
                             <h3 className="text-center mb-4">
                                 Register
                             </h3>
@@ -64,32 +71,47 @@ const Register = () => {
                                 </div>
                             )}
                             <form onSubmit={handleSubmit}>
-                                <input
-                                    className="form-control mb-3"
-                                    placeholder="Name"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    className="form-control mb-3"
-                                    placeholder="Email"
-                                    type="email"
-                                    name="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                />
-                                <input
-                                    className="form-control mb-3"
-                                    placeholder="Password"
-                                    type="password"
-                                    name="password"
-                                    required
-                                    value={formData.password}
-                                    onChange={handleChange}
-                                />
+                                <div className="mb-3">
+                                    <label className="form-label">
+                                        Name
+                                    </label>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Enter your name"
+                                        name="name"
+                                        required
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">
+                                        Email
+                                    </label>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Enter your email"
+                                        type="email"
+                                        name="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label className="form-label">
+                                        Password
+                                    </label>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Enter your password"
+                                        type="password"
+                                        name="password"
+                                        required
+                                        value={formData.password}
+                                        onChange={handleChange}
+                                    />
+                                </div>
                                 <button
                                     className="btn btn-success w-100"
                                     disabled={loading}
@@ -98,8 +120,10 @@ const Register = () => {
                                 </button>
                             </form>
                             <p className="text-center mt-3">
-                                Already have an account?
-                                <Link to="/">Login</Link>
+                                Already have an account?{" "}
+                                <Link to="/">
+                                    Login
+                                </Link>
                             </p>
                         </div>
                     </div>

@@ -85,6 +85,7 @@ const TaskForm = ({ task, reload, onClose }) => {
                         <textarea
                             name="description"
                             className="form-control"
+                            required
                             rows="3"
                             value={formData.description}
                             onChange={handleChange}

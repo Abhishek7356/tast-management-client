@@ -53,11 +53,19 @@ const Login = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <div className="row justify-content-center">
+        <div className="container mt-5 pt-5">
+            <div className="row justify-content-center align-items-center">
+
+                <div className="col-md-6 d-none d-md-block">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/011/432/528/small/enter-login-and-password-registration-page-on-screen-sign-in-to-your-account-creative-metaphor-login-page-mobile-app-with-user-page-flat-illustration-vector.jpg"
+                        alt="Task Manager"
+                        className="img-fluid rounded"
+                    />
+                </div>
                 <div className="col-md-5">
-                    <div className="card shadow">
-                        <div className="card-body">
+                    <div className="card">
+                        <div className="card-body p-4">
                             <h3 className="text-center mb-4">
                                 Login
                             </h3>
@@ -68,7 +76,9 @@ const Login = () => {
                             )}
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
-                                    <label>Email</label>
+                                    <label className="form-label">
+                                        Email
+                                    </label>
                                     <input
                                         type="email"
                                         name="email"
@@ -79,7 +89,9 @@ const Login = () => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label>Password</label>
+                                    <label className="form-label">
+                                        Password
+                                    </label>
                                     <input
                                         type="password"
                                         name="password"
