@@ -12,11 +12,11 @@ const Dashboard = () => {
     const [status, setStatus] = useState("");
     const [totalPages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false);
-
+    const [debouncedSearch, setDebouncedSearch] = useState(search);
     const [showForm, setShowForm] = useState(false);
     const [selectedTask, setSelectedTask] = useState(null);
 
-    
+
     const loadTasks = async () => {
         try {
             setLoading(true);
@@ -24,7 +24,7 @@ const Dashboard = () => {
             const { data } = await getTasks({
                 page,
                 limit: 5,
-                search,
+                search: debouncedSearch,
                 status,
             });
 
@@ -39,7 +39,15 @@ const Dashboard = () => {
 
     useEffect(() => {
         loadTasks();
-    }, [page, search, status]);
+    }, [page, debouncedSearch, status]);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedSearch(search);
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [search]);
 
     return (
         <>
